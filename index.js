@@ -63,7 +63,7 @@ function serverHandler(req, res) {
   } else if (req.url === '/upload' && (req.method.toLowerCase() === 'post')) { 
     upload.call(ctx);
   } else {
-    sendRaw.call('Not founded!', null, 404);
+    sendRaw.call(ctx, 'Not founded!', null, 404);
   }
 }
 server = http.createServer(serverHandler);
